@@ -72,21 +72,20 @@ import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
-import com.example.composebasics.meditation.MeditationDemoUI
+import com.example.composebasics.insta_profile.ProfileScreen
 import com.example.composebasics.ui.theme.ComposeBasicsTheme
 import kotlinx.coroutines.launch
 import kotlin.random.Random
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MeditationDemoUI()
+            ProfileScreen()
         }
     }
 }
-
-
 
 @Composable
 fun Progress() {
