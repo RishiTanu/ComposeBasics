@@ -69,4 +69,5 @@ dependencies {
     implementation(libs.androidx.constraintlayout.compose)
 
     implementation ("androidx.compose.material:material:1.7.1")
+    implementation ("androidx.navigation:navigation-compose:2.8.0")
 }
