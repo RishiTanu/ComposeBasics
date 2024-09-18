@@ -1,8 +1,10 @@
 package com.example.composebasics
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
@@ -32,9 +34,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -72,18 +76,26 @@ import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
-import com.example.composebasics.compose_navigation.ComposeNavigation
-import com.example.composebasics.insta_profile.ProfileScreen
+import com.example.composebasics.bottom_navigation_badges.BottomNavViewBadges
+import com.example.composebasics.compose_new_navigation.ComposeDefaultNav
+import com.example.composebasics.multi_select_lazycolumn.MultiSelectionLazyGrid
+import com.example.composebasics.permission_handling.PermissionHandle
 import com.example.composebasics.ui.theme.ComposeBasicsTheme
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 
 class MainActivity : ComponentActivity() {
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeNavigation()
+            ComposeBasicsTheme {
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    ComposeDefaultNav()
+                }
+            }
         }
     }
 }

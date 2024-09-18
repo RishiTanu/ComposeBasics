@@ -7,8 +7,9 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        google()
         mavenCentral()
-        gradlePluginPortal()
+        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 dependencyResolutionManagement {
@@ -16,6 +17,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 

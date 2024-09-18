@@ -1,6 +1,22 @@
+import org.jetbrains.kotlin.config.JvmAnalysisFlags.useIR
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    alias(libs.plugins.kotlin.ksp)
+    id("kotlin-parcelize")
+}
+
+kotlin {
+    sourceSets {
+        debug {
+            kotlin.srcDir("build/generated/ksp/debug/kotlin")
+        }
+        release {
+            kotlin.srcDir("build/generated/ksp/release/kotlin")
+        }
+    }
 }
 
 android {
@@ -68,6 +84,11 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.constraintlayout.compose)
 
-    implementation ("androidx.compose.material:material:1.7.1")
-    implementation ("androidx.navigation:navigation-compose:2.8.0")
+    implementation (libs.androidx.material)
+    implementation (libs.androidx.navigation.compose)
+    implementation (libs.accompanist.permissions)
+
+    //compose detinations
+    implementation (libs.core)
+    ksp (libs.ksp)
 }
