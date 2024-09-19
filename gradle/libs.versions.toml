@@ -2,8 +2,11 @@
 accompanistPermissions = "0.21.1-beta"
 agp = "8.5.2"
 constraintlayoutCompose = "1.0.1"
-core = "1.1.2-beta"
-kotlin = "1.9.0"
+
+core = "1.7.23-beta"
+kotlinksp = "1.6.10-1.0.2"
+
+kotlin = "1.9.24"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,7 +16,7 @@ activityCompose = "1.9.1"
 composeBom = "2024.04.01"
 material = "1.7.1"
 navigationCompose = "2.8.0"
-kotlinksp = "1.6.10-1.0.2"
+
 
 [libraries]
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
@@ -21,7 +24,7 @@ androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constr
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-material = { module = "androidx.compose.material:material", version.ref = "material" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
-core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -35,6 +38,7 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+core = { module = "io.github.raamcosta.compose-destinations:core", version.ref = "core" }
 ksp = { module = "io.github.raamcosta.compose-destinations:ksp", version.ref = "core" }
 
 [plugins]

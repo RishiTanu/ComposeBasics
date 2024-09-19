@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.config.JvmAnalysisFlags.useIR
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-
+  //  kotlin("kapt") // If you're using KAPT instead of KSP
     alias(libs.plugins.kotlin.ksp)
     id("kotlin-parcelize")
 }
@@ -17,6 +17,11 @@ kotlin {
             kotlin.srcDir("build/generated/ksp/release/kotlin")
         }
     }
+   /* sourceSets {
+        getByName("main") {
+            kotlin.srcDir("build/generated/ksp/main/kotlin")
+        }
+    }*/
 }
 
 android {
@@ -56,13 +61,14 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
 
 dependencies {
@@ -91,4 +97,5 @@ dependencies {
     //compose detinations
     implementation (libs.core)
     ksp (libs.ksp)
+
 }

@@ -1,7 +1,5 @@
 package com.example.composebasics.compose_new_navigation
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+
 
 
 @Composable
@@ -34,10 +33,12 @@ fun LoginNewScreen(
         Text(text = "Login Screen")
         Button(
             onClick = {
-              // navigator.navigate(
+           //    ProfileNewDes
+              //  navigator.navigate()
+                // navigator.navigate(
                   //  ProfileN
                 //)
-               // ProfileNewScreenDestination()
+
             }
         ) {
             Text(text = "Go to Profile Screen")
