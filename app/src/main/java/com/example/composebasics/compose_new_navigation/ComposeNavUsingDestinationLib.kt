@@ -1,5 +1,7 @@
 package com.example.composebasics.compose_new_navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,16 +12,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import com.example.composebasics.compose_new_navigation.destinations.PostNewScreenDestination
+import com.example.composebasics.compose_new_navigation.destinations.ProfileNewScreenDestination
+import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-
+import java.time.LocalDateTime
 
 
 @Composable
 fun ComposeNavUsingDestinationLib(modifier: Modifier = Modifier) {
-
+    DestinationsNavHost(navGraph = NavGraphs.root)
 }
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Destination(start = true)
 @Composable
 fun LoginNewScreen(
@@ -33,12 +39,16 @@ fun LoginNewScreen(
         Text(text = "Login Screen")
         Button(
             onClick = {
-           //    ProfileNewDes
-              //  navigator.navigate()
-                // navigator.navigate(
-                  //  ProfileN
-                //)
-
+                //    ProfileNewDes
+                navigator.navigate(
+                    ProfileNewScreenDestination(
+                        user = User(
+                            name = "Rishikesh",
+                            id = "123",
+                            created = LocalDateTime.now()
+                        )
+                    )
+                )
             }
         ) {
             Text(text = "Go to Profile Screen")
@@ -60,7 +70,11 @@ fun ProfileNewScreen(
     ) {
         Text(text = "Profile Screen $user", textAlign = TextAlign.Center)
         Button(onClick = {
-
+            navigator.navigate(
+                PostNewScreenDestination(
+                    showOnlyPostByUser = true
+                )
+            )
         }) {
             Text(text = "Go to Post Screen")
         }

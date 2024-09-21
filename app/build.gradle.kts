@@ -6,6 +6,8 @@ plugins {
   //  kotlin("kapt") // If you're using KAPT instead of KSP
     alias(libs.plugins.kotlin.ksp)
     id("kotlin-parcelize")
+   // kotlin("jvm")
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -51,17 +53,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_19
+        targetCompatibility = JavaVersion.VERSION_19
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "19"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
+        kotlinCompilerExtensionVersion = "1.5.15"
     }
     packaging {
         resources {

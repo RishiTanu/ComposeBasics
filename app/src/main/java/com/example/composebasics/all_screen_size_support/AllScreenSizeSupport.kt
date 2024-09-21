@@ -15,9 +15,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun AllScreenSizeSupport(
-
-) {
+fun AllScreenSizeSupport() {
     val windowInfo = rememberWindowInfo()
     if (windowInfo.screenWidthInfo is WindowInfo.WindowType.Compat) {
         LazyColumn(
