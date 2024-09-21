@@ -78,6 +78,7 @@ import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
 import com.example.composebasics.all_screen_size_support.AllScreenSizeSupport
 import com.example.composebasics.bottom_navigation_badges.BottomNavViewBadges
+import com.example.composebasics.bottomsheet.BottomSheet
 import com.example.composebasics.compose_new_navigation.ComposeDefaultNav
 import com.example.composebasics.compose_new_navigation.ComposeNavUsingDestinationLib
 import com.example.composebasics.multi_select_lazycolumn.MultiSelectionLazyGrid
@@ -96,12 +97,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeBasicsTheme {
                 Surface(color = MaterialTheme.colorScheme.background) {
-                    PaginationCompose()
+                    BottomSheet()
                 }
             }
         }
     }
 }
+
+
 
 @Composable
 fun Progress() {
